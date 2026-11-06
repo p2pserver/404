@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Krispy helps local shoppers discover coupons, compare prices, and save on everyday purchases and entertainment.">
+  <title>Krispy — Local deals. Bigger savings.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero-shell" id="top">
+    <nav class="topbar wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Krispy home">Krispy</a>
+      <form class="coupon-search" id="couponSearchForm" role="search">
+        <span class="search-tag" aria-hidden="true"><i class="fa-solid fa-ticket"></i></span>
+        <label class="sr-only" for="couponSearchInput">Search coupons</label>
+        <input id="couponSearchInput" type="search" placeholder="Search for coupons (e.g., Walmart, groceries, dining)" autocomplete="off">
+        <button class="search-button" type="submit" aria-label="Search coupons"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <a class="primary-cta" href="#app">Get the App – Save More <span aria-hidden="true">→</span></a>
+    </nav>
+
+    <div class="category-row wrap">
+      <button class="category-toggle" id="categoryToggle" type="button" aria-expanded="false" aria-controls="extraCategories">
+        <span class="category-grid-icon" aria-hidden="true"><i class="fa-solid fa-grip"></i></span>
+        <span>Categories</span><b class="plus" aria-hidden="true"><i class="fa-solid fa-plus"></i></b>
+      </button>
+      <button class="category-link" data-category="Groceries"><i class="category-icon fa-solid fa-cart-shopping" aria-hidden="true"></i>Groceries</button>
+      <button class="category-link" data-category="Dining"><i class="category-icon fa-solid fa-utensils" aria-hidden="true"></i>Dining</button>
+      <button class="category-link" data-category="Electronics"><i class="category-icon fa-solid fa-laptop" aria-hidden="true"></i>Electronics</button>
+      <button class="category-link" data-category="Fashion"><i class="category-icon fa-solid fa-shirt" aria-hidden="true"></i>Fashion</button>
+      <button class="category-link" data-category="Travel"><i class="category-icon fa-solid fa-plane" aria-hidden="true"></i>Travel</button>
+    </div>
+    <div class="extra-categories wrap" id="extraCategories" hidden>
+      <button class="category-link" data-category="Home & Garden">⌂ <span>Home &amp; Garden</span></button>
+      <button class="category-link" data-category="Auto">▰ <span>Auto</span></button>
+      <button class="category-link" data-category="Entertainment">▶ <span>Entertainment</span></button>
+      <button class="category-link" data-category="Kids & Family">♡ <span>Kids &amp; Family</span></button>
+      <button class="category-link" data-category="Health & Beauty">✧ <span>Health &amp; Beauty</span></button>
+    </div>
+    <p class="hero-copy wrap">Find nearby coupons, capture savings, and compare prices — all in one app.</p>
+  </header>
+
+  <main>
+    <section class="section wrap offers-section" aria-labelledby="offers-title">
+      <div class="section-heading">
+        <h2 id="offers-title">🎯 Explore Popular Offers</h2>
+        <a href="#coupons">See All Offers <b>→</b></a>
+      </div>
+      <div class="offer-carousel">
+        <button class="carousel-arrow prev" type="button" aria-label="Previous offers">‹</button>
+        <div class="offer-track" id="offerTrack">
+          <article class="offer-card target">
+            <div class="offer-brand"><span class="target-mark">◎</span> Target</div>
+            <p>Up to 20% Off<br>School Essentials</p>
+            <img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?w=520&q=85" alt="Colorful school backpack and supplies">
+          </article>
+          <article class="offer-card walmart">
+            <div class="offer-brand"><span class="spark">✳</span> Walmart</div>
+            <p>Save on<br>Family Groceries</p>
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=520&q=85" alt="Fresh groceries and produce">
+          </article>
+          <article class="offer-card amazon">
+            <div class="offer-brand"><span class="smile">⌣</span> Amazon</div>
+            <p>Deals on<br>Kids’ Tech &amp; More</p>
+            <span class="headphones" aria-hidden="true">🎧</span>
+          </article>
+          <article class="offer-card family">
+            <div class="offer-brand">Family favorites</div>
+            <p>Save on weekends<br>and local activities</p>
+            <span class="family-art" aria-hidden="true">🎟</span>
+          </article>
+        </div>
+        <button class="carousel-arrow next" type="button" aria-label="Next offers">›</button>
+      </div>
+      <div class="carousel-dots" aria-label="Offer carousel position"><span class="active"></span><span></span><span></span><span></span></div>
+    </section>
+
+    <section class="section wrap coupons-section" id="coupons" aria-labelledby="coupons-title">
+      <div class="section-heading coupon-heading">
+        <h2 id="coupons-title">🔥 Hottest Trending Deals</h2>
+        <span class="live-note"><i></i> Near Deals Loading...</span>
+      </div>
+      <div class="coupon-grid" id="couponGrid">
+        <article class="coupon-card" data-category="Dining" data-search="chipotle dining entree restaurant" data-code="KRISPYCHIP10">
+          <div class="coupon-logo chipotle-logo">CHIPOTLE</div>
+          <div class="coupon-details"><span class="coupon-kicker">CHIPOTLE COUPONS</span><strong>10% off your order</strong><p>Any Entrée</p><small class="verified"><i class="fa-solid fa-square-check" aria-hidden="true"></i> Verified recently · 0.6 mi away</small></div>
+          <button class="code-button" type="button"><span>Get Code</span></button>
+          <button class="favorite-button" type="button" aria-label="Save Chipotle offer" aria-pressed="false"><i class="fa-solid fa-heart" aria-hidden="true"></i></button>
+        </article>
+        <article class="coupon-card" data-category="Shopping" data-search="cvs pharmacy health beauty" data-code="CVS5SAVE">
+          <div class="coupon-logo cvs-logo">CVS</div>
+          <div class="coupon-details"><span class="coupon-kicker">CVS COUPONS</span><strong>$5 off your order</strong><p>$25+ Purchase</p><small class="verified"><i class="fa-solid fa-square-check" aria-hidden="true"></i> Verified recently · 0.3 mi away</small></div>
+          <button class="code-button" type="button"><span>Get Code</span></button>
+          <button class="favorite-button" type="button" aria-label="Save CVS offer" aria-pressed="false"><i class="fa-solid fa-heart" aria-hidden="true"></i></button>
+        </article>
+        <article class="coupon-card" data-category="Groceries" data-search="publix groceries food supermarket" data-code="PUBLIX10">
+          <div class="coupon-logo publix-logo">publix</div>
+          <div class="coupon-details"><span class="coupon-kicker">PUBLIX COUPONS</span><strong>$10 off your order</strong><p>$50+ Groceries</p><small class="verified"><i class="fa-solid fa-square-check" aria-hidden="true"></i> Verified recently · 1.2 mi away</small></div>
+          <button class="code-button" type="button"><span>Get Code</span></button>
+          <button class="favorite-button" type="button" aria-label="Save Publix offer" aria-pressed="false"><i class="fa-solid fa-heart" aria-hidden="true"></i></button>
+        </article>
+        <article class="coupon-card" data-category="Entertainment" data-search="amc movies entertainment tickets" data-code="AMC50">
+          <div class="coupon-logo amc-logo">amc</div>
+          <div class="coupon-details"><span class="coupon-kicker">AMC THEATRES COUPONS</span><strong>Buy 1, get 1 50% off</strong><p>Movie Tickets</p><small class="verified"><i class="fa-solid fa-square-check" aria-hidden="true"></i> Verified recently · 1.4 mi away</small></div>
+          <button class="code-button" type="button"><span>Get Code</span></button>
+          <button class="favorite-button" type="button" aria-label="Save AMC Theatres offer" aria-pressed="false"><i class="fa-solid fa-heart" aria-hidden="true"></i></button>
+        </article>
+      </div>
+      <p class="scroll-hint" id="scrollHint">More local deals load as you scroll ↓</p>
+      <div id="couponSentinel" class="sentinel" aria-hidden="true"></div>
+      <p class="empty-state" id="emptyState" hidden>No matching deals found. Try another search.</p>
+    </section>
+
+    <section class="app-promo wrap" id="app">
+      <div class="app-copy">
+        <h2>Get the Krispy App</h2>
+        <p>All your local deals, coupons, price comparisons<br class="desktop-only"> and savings — in one place.</p>
+        <h3>Be the First to Know!</h3>
+        <p class="subscribe-copy">Subscribe for app updates, launch news,<br class="desktop-only"> exclusive deals and early access.</p>
+        <form class="subscribe-form" id="subscribeForm">
+          <label class="sr-only" for="emailInput">Email address</label>
+          <span aria-hidden="true">✉</span>
+          <input id="emailInput" type="email" placeholder="Enter your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="form-message" id="formMessage" role="status"></p>
+      </div>
+      <div class="phone-showcase" aria-label="Krispy app previews">
+        <div class="phone phone-one">
+          <div class="phone-notch"></div><b class="mini-brand">Krispy</b><h4>Nearby Deals</h4>
+          <div class="mini-tiles"><span><i class="fa-solid fa-cart-shopping"></i><small>Groceries</small></span><span><i class="fa-solid fa-utensils"></i><small>Dining</small></span><span><i class="fa-solid fa-ticket"></i><small>Activities</small></span><span><i class="fa-solid fa-book-open"></i><small>School</small></span></div>
+        </div>
+        <div class="phone phone-two">
+          <div class="phone-notch"></div><h4>Compare Prices</h4><div class="product-art"><i class="fa-solid fa-headphones"></i></div>
+          <p>Walmart <b>$37.99</b></p><p>Target <b>$42.99</b></p><p>Amazon <b>$37.50</b></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="entertainment-section wrap" id="entertainment" aria-labelledby="entertainment-title">
+      <div class="entertainment-heading">
+        <div class="popcorn" aria-hidden="true">🍿</div>
+        <div><h2 id="entertainment-title">Discover Fun and Entertainment</h2><p>with promo and discount offers from AMC, Regal, GameStop and more.</p></div>
+        <a href="#coupons">See All Offers <b>→</b></a>
+      </div>
+      <div class="entertainment-grid">
+        <a class="entertainment-card amc-card" href="#coupons"><span class="ent-brand amc-brand">amc <small>Theatres</small></span><strong>$5 Off</strong><span>Any Movie Ticket</span><b class="round-arrow">→</b></a>
+        <a class="entertainment-card regal-card" href="#coupons"><span class="ent-brand regal-brand">Ⓡ REGAL</span><strong>$5 Off</strong><span>Movie Tickets</span><b class="round-arrow">→</b></a>
+        <a class="entertainment-card gamestop-card" href="#coupons"><span class="ent-brand game-brand">GameStop</span><strong>10% Off</strong><span>Select Games</span><b class="round-arrow">→</b></a>
+        <a class="entertainment-card more-card" href="#coupons"><span class="ent-brand more-brand">✧ &amp; More!</span><strong>More Deals</strong><span>&amp; Discounts</span><b class="round-arrow">→</b></a>
+      </div>
+    </section>
+
+    <section class="section wrap blog-section" id="blog" aria-labelledby="blog-title">
+      <div class="section-heading">
+        <div><h2 id="blog-title">From the Krispy Blog</h2><p class="section-subtitle">Money-saving tips and family-friendly ideas.</p></div>
+        <a href="#blog">View All Articles <b>→</b></a>
+      </div>
+      <div class="blog-grid">
+        <a class="blog-card" href="#blog"><img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?w=700&q=85" alt="School backpack and supplies"><div><h3>Back-to-School Savings:<br>10 Ways to Spend Less</h3><small>◷ 5 min read <b>→</b></small></div></a>
+        <a class="blog-card" href="#blog"><img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=700&q=85" alt="Family enjoying an outdoor activity"><div><h3>Affordable Family Activities<br>Near You</h3><small>◷ 4 min read <b>→</b></small></div></a>
+        <a class="blog-card" href="#blog"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=700&q=85" alt="Fresh vegetables in a grocery market"><div><h3>Grocery Price Hacks<br>for Busy Parents</h3><small>◷ 6 min read <b>→</b></small></div></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner wrap">
+      <div class="footer-brand"><div class="footer-wordmark">Krispy</div><p>Local deals. Bigger savings.<br>Happier families.</p></div>
+    </div>
+    <div class="footer-bottom wrap">
+      <span>© <span id="year"></span> Krispy. All rights reserved.</span>
+      <nav aria-label="Legal"><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#cookies">Cookie Policy</a><a href="#accessibility">Accessibility</a></nav>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
