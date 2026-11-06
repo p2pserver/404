@@ -25,6 +25,13 @@
     }
   });
 
+  document.addEventListener('click', (event) => {
+    const favorite = event.target.closest('.favorite-button');
+    if (!favorite) return;
+    const saved = favorite.getAttribute('aria-pressed') === 'true';
+    favorite.setAttribute('aria-pressed', String(!saved));
+    showToast(saved ? 'Offer removed from saved items' : 'Offer saved');
+  });
   // Toggle the additional category list.
   const categoryToggle = document.getElementById('categoryToggle');
   const extraCategories = document.getElementById('extraCategories');
@@ -112,7 +119,7 @@
       card.dataset.category = deal.category;
       card.dataset.search = deal.search;
       card.dataset.code = deal.code;
-      card.innerHTML = `<div class="merchant"><span class="merchant-icon ${deal.cls}">${deal.icon}</span>${deal.name}</div><strong>${deal.offer}</strong><p>${deal.detail}</p><small>⌖ ${deal.distance}</small><button class="code-button" type="button"><span class="ticket-icon" aria-hidden="true">▣</span><span>Get Code</span></button>`;
+      card.innerHTML = `<div class="coupon-logo ${deal.cls}-logo">${deal.name}</div><div class="coupon-details"><span class="coupon-kicker">${deal.name.toUpperCase()} COUPONS</span><strong>${deal.offer}</strong><p>${deal.detail}</p><small class="verified"><i class="fa-solid fa-square-check" aria-hidden="true"></i> Verified recently · ${deal.distance} away</small></div><button class="code-button" type="button"><span>Get Code</span></button><button class="favorite-button" type="button" aria-label="Save ${deal.name} offer" aria-pressed="false"><i class="fa-solid fa-heart" aria-hidden="true"></i></button>`;
       couponGrid.appendChild(card);
     });
     if (batches >= 3) document.getElementById('scrollHint').textContent = 'You’re all caught up on featured sample deals.';
