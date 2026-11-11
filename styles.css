@@ -60,7 +60,7 @@ button{cursor:pointer}
 .merchant-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;font-weight:800;color:white}
 .chipotle{background:#9b211b}.cvs{background:#e91e36}.publix{background:#4d913e}.amc{background:#e51c2a;font-size:10px}
 .coupon-card strong{font-size:17px}.coupon-card p{margin:2px 0 4px;font-size:14px}.coupon-card small{font-weight:700;font-size:12px}
-.code-button{position:absolute;right:10px;bottom:9px;display:flex;align-items:center;justify-content:center;gap:8px;min-width:150px;border:2px solid #32105f;border-radius:25px;background:#fff;color:black;padding:7px 14px;font-size:14px;font-weight:800;box-shadow:none;transition:background .15s,color .15s}
+.code-button{position:absolute;right:10px;bottom:9px;display:flex;align-items:center;justify-content:center;gap:8px;min-width:150px;border:2px solid #32105f;border-radius:25px;background:#fff;color:#800080;padding:7px 14px;font-size:14px;font-weight:800;box-shadow:none;transition:background .15s,color .15s}
 .code-button:hover{background:#f4edff}
 .ticket-icon{font-size:17px;line-height:1}
 .scroll-hint{text-align:center;color:#77718d;font-size:12px;margin:12px 0 0}
