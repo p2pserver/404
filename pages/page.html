@@ -8,14 +8,32 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="header">
-  <a class="brand" href="#"><b>k</b> krispy<span>.</span></a>
-  <nav><a href="#">Explore</a><a class="active" href="#">Categories</a><a href="#">Stores</a><a href="#">Travel</a></nav>
-  <div class="head-actions">
-    <input id="search" type="search" placeholder="Search deals or brands..." aria-label="Search deals">
-    <button id="savedToggle" title="Saved offers">♡ <i id="savedCount">0</i></button>
-    <button id="menuToggle" class="menu" aria-label="Open filters">☰</button>
+<header class="hero-shell" id="top">
+  <nav class="topbar wrap" aria-label="Main navigation">
+    <a class="brand" href="#top">Krispy</a>
+    <form class="coupon-search" id="couponSearchForm" role="search"><span class="search-tag">◇</span><label class="sr-only" for="couponSearchInput">Search coupons</label><input id="couponSearchInput" type="search" placeholder="Search for coupons (e.g., Walmart, fashion, travel)"><button class="search-button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button></form>
+    <div class="header-actions">
+      <a class="header-icon-cta" href="#app" aria-label="Get the app"><i class="fa-solid fa-mobile-screen-button"></i></a>
+      <a class="header-icon-cta" href="#coupons" aria-label="Shopping cart"><i class="fa-solid fa-cart-shopping"></i></a>
+      <div class="language-control"><button class="language-cta" id="languageToggle" aria-expanded="false"><i class="fa-solid fa-globe"></i><span id="languageCurrent">English</span><i class="fa-solid fa-chevron-down language-chevron"></i></button>
+        <div class="language-menu" id="languageMenu" hidden><button data-lang="en">English</button><button data-lang="es">Español</button><button data-lang="fr">Français</button><button data-lang="pt">Português</button></div>
+      </div>
+    </div>
+  </nav>
+  <div class="category-row wrap">
+    <button class="category-toggle" id="categoryToggle" aria-expanded="false" aria-controls="extraCategories"><span class="category-grid-icon"><i></i><i></i><i></i><i></i></span><span data-i18n="categories">Categories</span><b class="plus">+</b></button>
+    <button class="category-link" data-category="Baby & Kids"><i class="fa-solid fa-child-reaching category-icon"></i><span data-i18n="babyKids">Baby &amp; Kids</span></button>
+     <a class="category-link" href="pages/page.html" data-category="Beauty & Health" aria-label="Browse Beauty &amp; Health deals"><i class="fa-solid fa-spa category-icon"></i><span data-i18n="beautyHealth">Beauty &amp; Health</span></a>
+    <button class="category-link" data-category="Electronics"><i class="fa-solid fa-laptop category-icon"></i><span data-i18n="electronics">Electronics</span></button>
+    <button class="category-link" data-category="Fashion"><i class="fa-solid fa-shirt category-icon"></i><span data-i18n="fashion">Fashion</span></button>
+    <button class="category-link" data-category="Travel"><i class="fa-solid fa-plane category-icon"></i><span data-i18n="travel">Travel</span></button>
   </div>
+  <div class="extra-categories wrap" id="extraCategories" hidden>
+    <button class="category-link" data-category="Dining"><i class="fa-solid fa-utensils category-icon"></i><span data-i18n="dining">Dining</span></button>
+    <button class="category-link" data-category="Home & Garden"><i class="fa-solid fa-house category-icon"></i><span data-i18n="homeGarden">Home &amp; Garden</span></button>
+    <button class="category-link" data-category="Pets"><i class="fa-solid fa-paw category-icon"></i><span data-i18n="pets">Pets</span></button>
+  </div>
+  <p class="hero-copy wrap" data-i18n="heroCopy">Find coupons, offers and capture savings — all in one app.</p>
 </header>
 <main class="wrap">
   <div class="crumb">Home　/　Categories　/　<span id="crumbName">Beauty &amp; Health</span></div>
