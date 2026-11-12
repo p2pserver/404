@@ -1,78 +1,10 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#191622"><title>Beauty &amp; Health Deals | Krispy</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header class="hero-shell" id="top">
-  <nav class="topbar wrap" aria-label="Main navigation">
-    <a class="brand" href="#top">Krispy</a>
-    <form class="coupon-search" id="couponSearchForm" role="search"><span class="search-tag">◇</span><label class="sr-only" for="couponSearchInput">Search coupons</label><input id="couponSearchInput" type="search" placeholder="Search for coupons (e.g., Walmart, fashion, travel)"><button class="search-button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button></form>
-    <div class="header-actions">
-      <a class="header-icon-cta" href="#app" aria-label="Get the app"><i class="fa-solid fa-mobile-screen-button"></i></a>
-      <a class="header-icon-cta" href="#coupons" aria-label="Shopping cart"><i class="fa-solid fa-cart-shopping"></i></a>
-      <div class="language-control"><button class="language-cta" id="languageToggle" aria-expanded="false"><i class="fa-solid fa-globe"></i><span id="languageCurrent">English</span><i class="fa-solid fa-chevron-down language-chevron"></i></button>
-        <div class="language-menu" id="languageMenu" hidden><button data-lang="en">English</button><button data-lang="es">Español</button><button data-lang="fr">Français</button><button data-lang="pt">Português</button></div>
-      </div>
-    </div>
-  </nav>
-  <div class="category-row wrap">
-    <button class="category-toggle" id="categoryToggle" aria-expanded="false" aria-controls="extraCategories"><span class="category-grid-icon"><i></i><i></i><i></i><i></i></span><span data-i18n="categories">Categories</span><b class="plus">+</b></button>
-    <button class="category-link" data-category="Baby & Kids"><i class="fa-solid fa-child-reaching category-icon"></i><span data-i18n="babyKids">Baby &amp; Kids</span></button>
-     <a class="category-link" href="pages/page.html" data-category="Beauty & Health" aria-label="Browse Beauty &amp; Health deals"><i class="fa-solid fa-spa category-icon"></i><span data-i18n="beautyHealth">Beauty &amp; Health</span></a>
-    <button class="category-link" data-category="Electronics"><i class="fa-solid fa-laptop category-icon"></i><span data-i18n="electronics">Electronics</span></button>
-    <button class="category-link" data-category="Fashion"><i class="fa-solid fa-shirt category-icon"></i><span data-i18n="fashion">Fashion</span></button>
-    <button class="category-link" data-category="Travel"><i class="fa-solid fa-plane category-icon"></i><span data-i18n="travel">Travel</span></button>
-  </div>
-  <div class="extra-categories wrap" id="extraCategories" hidden>
-    <button class="category-link" data-category="Dining"><i class="fa-solid fa-utensils category-icon"></i><span data-i18n="dining">Dining</span></button>
-    <button class="category-link" data-category="Home & Garden"><i class="fa-solid fa-house category-icon"></i><span data-i18n="homeGarden">Home &amp; Garden</span></button>
-    <button class="category-link" data-category="Pets"><i class="fa-solid fa-paw category-icon"></i><span data-i18n="pets">Pets</span></button>
-  </div>
-  <p class="hero-copy wrap" data-i18n="heroCopy">Find coupons, offers and capture savings — all in one app.</p>
-</header>
-<main class="wrap">
-  <div class="crumb">Home　/　Categories　/　<span id="crumbName">Beauty &amp; Health</span></div>
-  <section class="hero">
-    <div><small>THE KRISPY EDIT</small><h1 id="heroTitle">Beauty &amp; Health <em>deals</em></h1><p id="heroDesc">Feel-good finds, everyday essentials, and little luxuries for less.</p></div>
-    <div class="hero-art"><div class="orbit"></div><strong>%</strong><small>GOOD FINDS.<br>BETTER PRICES.</small></div>
-  </section>
-  <div class="layout">
-    <aside class="sidebar" id="sidebar">
-      <div class="side-head"><h2>Browse &amp; filter</h2><button id="closeSidebar" aria-label="Close filters">×</button></div>
-      <section><h3>Categories</h3><div id="categories" class="categories"></div></section>
-      <section><div class="filter-title"><h3>Discount</h3><button data-clear="discount">Clear</button></div>
-        <label><input type="checkbox" name="discount" value="10"> 10% or more</label>
-        <label><input type="checkbox" name="discount" value="20"> 20% or more</label>
-        <label><input type="checkbox" name="discount" value="30"> 30% or more</label>
-        <label><input type="checkbox" name="discount" value="50"> 50% or more</label>
-      </section>
-      <section><div class="filter-title"><h3>Offer type</h3><button data-clear="type">Clear</button></div>
-        <label><input type="checkbox" name="type" value="Code"> Promo code</label>
-        <label><input type="checkbox" name="type" value="Deal"> Online deal</label>
-        <label><input type="checkbox" name="type" value="Sale"> Sale</label>
-      </section>
-      <section><div class="filter-title"><h3>Brand</h3><button data-clear="brand">Clear</button></div><div id="brands"></div></section>
-      <section><h3>Availability</h3><label><input type="checkbox" id="onlineOnly"> Online offers only</label></section>
-      <button id="reset" class="reset">Reset all filters</button>
-    </aside>
-    <div class="backdrop" id="backdrop"></div>
-    <section class="results">
-      <div class="toolbar"><div><small>CURATED FOR YOU</small><h2><span id="resultTitle">Beauty &amp; Health</span> <sup id="count"></sup></h2></div>
-        <div class="sort-wrap"><button id="mobileFilters">☷ Filters</button><label>Sort by <select id="sort"><option value="featured">Featured</option><option value="discount">Biggest discount</option><option value="az">Brand A–Z</option></select></label></div>
-      </div>
-      <div id="chips" class="chips"></div><div id="grid" class="grid"></div>
-      <div id="empty" class="empty" hidden><h3>No offers found</h3><p>Try removing a filter or searching another brand.</p><button id="clearEmpty">Clear filters</button></div>
-      <div class="load-wrap"><button id="loadMore">Load more offers　↓</button></div>
-      <section class="newsletter"><div><small>THE GOOD STUFF, DELIVERED</small><h2>More savings.<br><em>Less searching.</em></h2><p>Get a roundup of fresh deals and exclusive finds.</p></div>
-        <form id="newsletter"><input type="email" placeholder="Your email address" required aria-label="Your email address"><button>Join Krispy →</button><small id="newsMessage">No spam. Just the good stuff.</small></form>
-      </section>
-    </section>
-  </div>
-</main>
-<footer class="site-footer"><div class="footer-inner wrap"><div class="footer-wordmark">Krispy</div><p>Brand names. Big savings.<br>Happier families.</p></div><div class="footer-bottom wrap"><span>© <span id="year"></span> WordPress. All rights reserved.</span><nav><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#cookies">Cookie Policy</a><a href="#accessibility">Accessibility</a></nav></div></footer><script src="script.js"></script>
-</body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050505"><title>Electronics Deals | Krispy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="styles.css"></head>
+<body><header class="topbar"><a class="wordmark" href="../index.html">Krispy</a><form class="searchbar" id="searchForm"><i class="fa-solid fa-magnifying-glass"></i><input id="search" type="search" placeholder="Search coupons, brands and offers" aria-label="Search coupons, brands and offers"><button aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button></form><div class="header-actions"><a href="#offers" aria-label="Get the app"><i class="fa-solid fa-mobile-screen-button"></i></a><button id="savedToggle" aria-label="Show saved offers"><i class="fa-solid fa-cart-shopping"></i><span id="savedCount" class="saved-count" hidden>0</span></button><div class="language"><button id="languageToggle" aria-expanded="false"><i class="fa-solid fa-globe"></i><span>EN</span><i class="fa-solid fa-chevron-down small"></i></button><div class="language-menu" id="languageMenu" hidden><button data-lang="en">English</button><button data-lang="es">Español</button><button data-lang="fr">Français</button></div></div></div></header>
+<div class="app-layout"><aside class="left-rail" id="sidebar"><section class="panel categories-panel"><h2><i class="fa-solid fa-border-all"></i> All Categories <button id="closeSidebar" aria-label="Close menu">×</button></h2><nav id="categories" aria-label="Categories"></nav></section><section class="panel filters-panel"><h2><i class="fa-solid fa-filter"></i> Filter Deals</h2><div class="filter-group"><h3>Offer Type <i class="fa-solid fa-chevron-up"></i></h3><label><input type="checkbox" name="type" value="Code"> Coupon Codes <small>(124)</small></label><label><input type="checkbox" name="type" value="Deal"> Online Deals <small>(96)</small></label><label><input type="checkbox" name="type" value="Sale"> In-Store Offers <small>(52)</small></label></div><div class="filter-group"><h3>Discount <i class="fa-solid fa-chevron-up"></i></h3><label><input type="checkbox" name="discount" value="10"> 10% Off or More</label><label><input type="checkbox" name="discount" value="20"> 20% Off or More</label><label><input type="checkbox" name="discount" value="30"> 30% Off or More</label><label><input type="checkbox" name="discount" value="50"> 50% Off or More</label></div><button class="reset" id="reset">Clear all filters</button></section></aside><div id="backdrop" class="backdrop"></div>
+<main class="main-content"><div class="breadcrumb"><a href="../index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span id="crumbName">Electronics</span></div><div class="title-row"><div><h1><i id="titleIcon" class="fa-solid fa-laptop"></i> <span id="heroTitle">Electronics Deals</span></h1><p id="heroDesc">Save on the latest tech, gadgets, and accessories from top brands.</p></div><button id="followCategory" class="follow"><i class="fa-regular fa-heart"></i><span>Follow Category</span></button></div>
+<section class="promo" aria-label="Featured savings"><div class="promo-copy"><h2 id="promoTitle">Top Electronics Savings</h2><p id="promoDesc">Deals on headphones, laptops, TVs and more.</p><a href="#offers" id="promoLink">Shop Electronics Offers <i class="fa-solid fa-arrow-right"></i></a></div><div class="promo-art" aria-hidden="true"><img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=900&q=85" alt=""></div></section>
+<div class="offers-heading" id="offers"><h2><span id="offerCount">125</span> <span id="offerHeading">Electronic Offers</span></h2><div class="sort-tools"><button id="mobileFilters"><i class="fa-solid fa-filter"></i> Filters</button><label for="sort">Sort by:</label><select id="sort"><option value="popular">Most Popular</option><option value="discount">Biggest Discount</option><option value="az">Store A–Z</option></select></div></div><div id="grid" class="offers-list"></div><div id="empty" class="empty" hidden>No matching offers. Try another search or remove filters.</div><nav class="pagination" id="pagination" aria-label="Offer pages"></nav><p class="demo-note">Sample promotional offers for layout demonstration. Codes and verification timestamps are illustrative, not live merchant promotions.</p></main></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div><script src="script.js"></script></body></html>
